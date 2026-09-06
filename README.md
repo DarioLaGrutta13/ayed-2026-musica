@@ -4,9 +4,11 @@ Repositorio del grupo. Partir de este esqueleto. No borrar la estructura de `src
 
 ## Integrantes
 
-| Nombre | Mail | GitHub |
+
 | Dario La Grutta | dariolagrutta@gmail.com | DarioLaGrutta13 |
+
 | Mara Laciar | laciarmara@gmail.com | maralaciar |
+
 | Tomas Funes | tomasfunesok@gmail.com | tomasfunesok-rgb |
 
 
