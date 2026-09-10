@@ -11,15 +11,14 @@ Completar y hacer crecer en cada entrega. No hace falta prosa larga: oraciones c
 
 Qué es un ítem del catálogo. Qué es mutable y qué no (E1). Cómo se relacionan catálogo, colección principal, pila y cola.
 
-```text
 Dentro de nuestra elección definiriamos como ítem principal a la Canción ("título"), ya que la búsqueda y reconocimiento principal del usuario es mediante ese dato. Por otro lado, adentrandonos dentro de lo que sería mutable o no, tenemos dos visiones:
     1) Dentro del aspecto técnico, trabajaremos con los contenedores de tipo lista y diccionario, donde ambos son de caracter mutable como bien vimos y sus valores se pueden sobreescribir y/o borrar.
-
-    2) Tomando una mirada lógica del modelo, aquello inmutable será la información raíz y principal. Por ejemplo, el nombre de una canción, su lanzamiento (álbum y año de lanzamiento), id. Por otro lado, adentrandonos en las posibilidades, dentro de una canción pueden aparecer métricas extra como cantidad de reproducciones, likes, las cuáles son de índole variable/mutable; o hasta implementaciones que indiquen nuevas versiones y modifiquen el género, la duración, etc. Sin embargo, un detalle no menor a tener en cuenta, esta nueva versión formaría una nueva entidad y no reemplazaría a la original.
+    2) Tomando una mirada lógica del modelo, aquello inmutable será la información raíz y principal. Por ejemplo, el nombre de una canción, su lanzamiento (álbum y año de lanzamiento), id. Por otro lado, adentrandonos en las posibilidades,
+dentro de una canción pueden aparecer métricas extra como cantidad de reproducciones, likes, las cuáles son de índole variable/mutable; o hasta implementaciones que indiquen nuevas versiones y modifiquen el género, la duración, etc.
+Sin embargo, un detalle no menor a tener en cuenta, esta nueva versión formaría una nueva entidad y no reemplazaría a la original.
 
 Por último el catálogo será nuestra base principal. Consecuentemente, podremos obtener o armar una colección principal que funcionaría como playlist. Dicha colección, estará integrada por nuestras canciones dentro del catálogo. 
 Posteriormente, para cada canción obtendremos un historial de reproducción, que sería lo denominado pila y por último la cola de reproducción que indicaría la sucesión de canciones a escuchar.
-```
 
 ```text
                                        Catálogo de canciones
