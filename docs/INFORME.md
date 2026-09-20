@@ -20,15 +20,60 @@ Por último el catálogo será nuestra base principal. Consecuentemente, podremo
 Posteriormente, para cada canción obtendremos un historial de reproducción, que sería lo denominado pila y por último la cola de reproducción que indicaría la sucesión de canciones a escuchar.
 
 ```text
-(pueden pegar un diagrama ASCII o una lista de clases)
+                                       Catálogo de canciones
+                                                 │
+                                                 ▼
+                                       Colección principal
+                                                 │
+                                              ┌──┴──┐
+                                          ▼            ▼
+                                        Pila          Cola
+                                     (historial) (pendientes)
 ```
 
 ## 3. Recursión (E2)
 
-- Función:
-- Caso base:
-- Caso recursivo:
+- Función: versiones_de() ubicada en src/dominio/Recursiva.py
+Internamente la función mencionada hace uso del método "versiones_directas()". Esta se encuentra definida en la clase 'Biblioteca' y recibe como argumentos a un id_buscar, un objeto de tipo 'Biblioteca' y la información de las versiones.
+
+- Caso base: Devolver la lista vacía.
+En caso de que 'Biblioteca.versiones_directas()' devuelva una lista vacía, directamente se analiza esa situación. En caso de ser verdadero el supuesto, se finaliza el análisis y notifica que no hay versiones posteriores.
+
+- Caso recursivo: Nuevo llamado a versiones_de()
+Luego de pasar el caso base, se determina que el contenido devuelto por el métido versiones_directas(), sea el próximo caso a analizar. de esa manera, para poder analizar ese caso se utiliza el caso recursivo de volver a utilizar versiones_de().
+
 - Traza de un ejemplo real del dataset:
+
+A)Llamamos la funcion y proporcionamos los parámetros correspondientes 
+    versiones_de(id_buscar, versiones)
+    Ej: versiones_de(19, mi_biblioteca ,versiones) 
+    --> Siendo mi_biblioteca la lista con todas nuestras canciones
+    --> Siendo versiones nuestra lista que guarda el registro de versiones
+
+B)Internamente, llamamos al método mi_biblioteca.versiones_directas(19, versiones). Este método lo que hace es, gracias al id_buscar proporcionado (19), encontrar posteriores versiones para dicho título. En caso de econtrar algún registro que coincida, lo guarda en una lista que luego devuelve. 
+    Ej: siendo 19 el 'id' a buscar, devuelve una coincidencia con el 'id' 63 porque es 'version_de' : 19
+
+C) Teniendo como registro hasta ahora que 19 --> 63 --> ¿63 tiene una version posterior?
+En este paso es que se aplica nuevamente la búsqueda aplicando el metodo recursivo con version_de()
+
+D) Finalmente para este caso, nos encontramos con que el recorrido final es 19-->63 y allí termina porque no hay otro título posterior a ese.
+
+```text
+Función: versiones_de(19, mi_biblioteca ,versiones)
+Caso base: Si la canción no tiene una versión posterior → devolver [id] - [titulo] de la canción buscada.
+Caso recursivo: [id] + versiones_de(id_buscar , biblioteca , versiones)
+Traza para 'Flaca' (id 19): según versiones.csv, 19-->63.
+
+Llamada 1: versiones_directas(19, versiones) --> tiene siguiente (63)
+→ devuelve [19] + versiones_directas(63, versiones)
+
+Llamada 2: versiones_directas(63, versiones) --> no tiene siguiente versión
+entonces, versiones_directas(63, versiones) --> NO tiene siguiente (caso base)
+
+→ devuelve [63]
+
+Resultado: [19] + [63] = [19, 63]
+```
 
 ## 4. TADs (E3)
 
