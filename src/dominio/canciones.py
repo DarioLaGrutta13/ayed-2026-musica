@@ -1,4 +1,5 @@
-from src.dominio.clases import Biblioteca, Playlist
+from src.dominio.Biblioteca import Biblioteca
+from src.dominio.Playlist import Playlist
 
 canciones = [
     {"id": 1, "titulo": "De Musica Ligera", "artista": "Soda Stereo", "album": "Cancion Animal", "genero": "Rock", "anio": 1990, "duracion_seg": 213},
@@ -85,4 +86,4 @@ versiones = [
 
 biblio = Biblioteca(canciones)
 
-mi_primer_playlist = Playlist("mix")
+mi_primer_playlist = Playlist("mi mix")

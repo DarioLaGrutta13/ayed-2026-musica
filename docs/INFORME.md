@@ -80,11 +80,16 @@ Resultado: [19] + [63] = [19, 63]
 
 | TAD | Operaciones | Invariante |
 | --- | --- | --- |
-| ListaEnlazada |  |  |
-| Pila |  |  |
-| Cola |  |  |
+| ListaEnlazada |  esta_vacia - tamanio - insertar_al_inicio - insertar_al_final - insertar_ordenado - eliminar - buscar - __iter__ | - |
+| Pila | apilar - desapilar - ver_tope -  esta_vacia - tamanio - __iter__ | - |
+| Cola | encolar - desencolar - ver_frente - esta_vacia - tamanio -  __iter__ | - |
 
 Dónde se usa cada uno en el dominio.
+
+| TAD | Archivo | Dónde se usa | Se utiliza en las opciones de manú |
+| ListaEnlazada | `Playlist.py` | Colección principal: guarda las canciones de la playlist en el orden en que se agregan, con tope = 10 | 5, 6, 7, 8 |
+| Cola | `cola_reproduccion.py` | Canciones pendientes de reproducir | 9, 10, 11 |
+| Pila | `historial.py` | Historial de canciones reproducidas. Al reproducir, la canción sale de la cola y se apila en el historial | 10, 12, 13 |
 
 ## 5. Complejidad (E4)
 

@@ -9,7 +9,6 @@ Repositorio del grupo. Partir de este esqueleto. No borrar la estructura de `src
 
 | Mara Laciar | laciarmara@gmail.com | maralaciar |
 
-| Tomas Funes | tomasfunesok@gmail.com | tomasfunesok-rgb |
 
 
 **Tema elegido:**  Biblioteca musical 

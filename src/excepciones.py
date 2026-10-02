@@ -5,6 +5,9 @@ class ItemNoEncontradoError(Exception):
 class ColeccionLlenaError(Exception):
     pass
 
+class CancionDuplicadaError(Exception):
+    pass
+
 
 class ColeccionVaciaError(Exception):
     pass

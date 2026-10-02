@@ -71,7 +71,57 @@ def listar_versiones_derivadas(cancion_id, catalogo):
 
 | E2 | 20/09/26 | Copilot | código | Implementé el 'Try - Except' Pegué el error que me daba lo generado para entender el motivo | Reescribí la manera de utilizar 'Exception - ValueError - TypeError' | La Grutta Dario |
 
-| E3 |  |  |  |  |  |  |
+| E3 | 28/09/26 | Claude | código | Consultando por las excepciones de los errores le envié un fragmento donde yo utilizo mi función "pedir_opción()"  |
+
+```text
+
+def mostrar_detalles():
+
+    num_cancion = pedir_opcion(
+        f"\nDentro de nuestras {biblio.cantidad_canciones()} canciones, ingrese el número de la canción que le gustaría ver: ")
+
+    if num_cancion < 1 or num_cancion > biblio.cantidad_canciones():
+        print("\nOpción inválida, su elección no es correcta. Por favor, verifique su ingreso.\n")
+    else:
+        print("\nLa información que poseemos de su canción elegida es: \n")
+        print(f"Título: {biblio._canciones[num_cancion-1]['titulo']}")
+        print(f"Artista: {biblio._canciones[num_cancion-1]['artista']}")
+        print(f"Álbum: {biblio._canciones[num_cancion-1]['album']}")
+        print(f"Género: {biblio._canciones[num_cancion-1]['genero']}")
+        print(f"Año: {biblio._canciones[num_cancion-1]['anio']}")
+        print(
+            f"Duración (segundos): {biblio._canciones[num_cancion-1]['duracion_seg']}")
+
+```
+| La sugerencia de la IA fue aprovechar la búsqueda y hacerla directamente dentro de la clase Biblioteca() para de esa manera llamar ante cada búsqueda ese método de la clase. Nuevo código: |
+
+```text
+
+def mostrar_detalles():
+
+    num_cancion = pedir_opcion(
+        f"\nDentro de nuestras {biblio.cantidad_canciones()} canciones, ingrese el número de la canción que le gustaría ver: ")
+
+    cancion = biblio.buscar_cancion(num_cancion)
+
+    print("\nLa información que poseemos de su canción elegida es: \n")
+    print(f"Título: {cancion['titulo']}")
+    print(f"Artista: {cancion['artista']}")
+    print(f"Álbum: {cancion['album']}")
+    print(f"Género: {cancion['genero']}")
+    print(f"Año: {cancion['anio']}")
+    print(f"Duración (segundos): {cancion['duracion_seg']}")
+
+```
+| La Grutta Dario| 
+
+
+| Entrega | Fecha | Herramienta (ChatGPT, Cursor, Copilot, otra) | Para qué (diseño, código, debug, docs) | Qué pegaron o generaron | Qué reescribieron / revisaron a mano | Integrante |
+
+
+
+| E3 | 29/09/26 | Claude | código | Pedí explicación y ejemplos de como es que se relacionan Pila() y Cola() con ListaEnlazada() | Me dió ejemplos de como lós métodos de ListaEnlazada() se utilizan en Pila y Cola para realizar las acciones | La Grutta Dario |
+
 | E4 |  |  |  |  |  |  |
 | E5 |  |  |  |  |  |  |
 | E6 |  |  |  |  |  |  |
